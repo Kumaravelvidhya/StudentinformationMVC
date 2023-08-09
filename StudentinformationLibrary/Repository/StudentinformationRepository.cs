@@ -15,6 +15,7 @@ namespace StudentinformationMVC.Repository
         {
             connectionString = @"Data source=ANIYAAN-1006;Initial catalog=Student Informaton;User Id=Anaiyaan;Password=Anaiyaan@123";
         }
+        //inserwithsp
         public void Insert(StudentinformationModels a)
         {
             try
@@ -34,6 +35,7 @@ namespace StudentinformationMVC.Repository
                 throw;
             }
         }
+        //list of select for mvc
         public List<StudentinformationModels> select()
         {
             try
@@ -52,6 +54,7 @@ namespace StudentinformationMVC.Repository
             }
 
         }
+        //select with id using mvc
         public StudentinformationModels selectwithid(int studentid)
         {
             try
