@@ -55,14 +55,14 @@ namespace StudentinformationMVC.Repository
 
         }
         //select with id using mvc
-        public StudentinformationModels selectwithid(int Studentid)
+        public StudentinformationModels selectwithid(int id)
         {
             try
             {
                 
                 SqlConnection Connection = new SqlConnection(connectionString);
                 Connection.Open();
-                 var info = Connection.QueryFirst <StudentinformationModels > ($"exec select{Studentid}");
+                 var info = Connection.QueryFirst <StudentinformationModels>($"exec selectsid {id} ");
                 Connection.Close();
                 return info;
             }

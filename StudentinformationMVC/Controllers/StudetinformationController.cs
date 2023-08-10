@@ -27,9 +27,10 @@ namespace StudentinformationMVC.Controllers
         }
 
         // GET: StudetinformationController1/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int Studentid)
         {
-            return View();
+            var res = objstudent.selectwithid(Studentid);
+            return View("Details", res);
         }
 
         // GET: StudetinformationController1/Create
@@ -55,19 +56,20 @@ namespace StudentinformationMVC.Controllers
         }
 
         // GET: StudetinformationController1/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int Studentid)
         {
-            return View();
+            return View("Edit", new StudentinformationModels());
         }
 
         // POST: StudetinformationController1/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int Studentid, StudentinformationModels collect)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                objstudent.Update(collect);
+                return RedirectToAction(nameof(List));
             }
             catch
             {
