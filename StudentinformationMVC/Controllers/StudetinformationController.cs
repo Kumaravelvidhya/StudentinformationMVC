@@ -45,7 +45,7 @@ namespace StudentinformationMVC.Controllers
         {
             try
             {
-                objstudent.Insert(data);
+                objstudent.Insertsp(data);
                 return RedirectToAction(nameof(List));
             }
             catch
