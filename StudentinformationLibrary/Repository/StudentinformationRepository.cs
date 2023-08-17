@@ -13,7 +13,7 @@ namespace StudentinformationMVC.Repository
         public readonly string connectionString;
         public StudentinformationRepository()
         {
-            connectionString = @"Data source=ANIYAAN-1006;Initial catalog=Student Informaton;User Id=Anaiyaan;Password=Anaiyaan@123";
+            connectionString = @"Data source=ANIYAAN-1006;Initial catalog=Student Informaton;User Id=Anaiyaan; Password=Anaiyaan@123";
         }
         //inserwithsp
         public void Insertsp(StudentinformationModels a)
@@ -55,14 +55,14 @@ namespace StudentinformationMVC.Repository
 
         }
         //select with id using mvc
-        public StudentinformationModels selectwithid(int id)
+        public StudentinformationModels selectwithid(int Studentid)
         {
             try
             {
                 
                 SqlConnection Connection = new SqlConnection(connectionString);
                 Connection.Open();
-                 var info = Connection.QueryFirst <StudentinformationModels>($"exec selectsid {id} ");
+                 var info = Connection.QueryFirst <StudentinformationModels>($"exec selectsid {Studentid} ");
                 Connection.Close();
                 return info;
             }

@@ -27,9 +27,9 @@ namespace StudentinformationMVC.Controllers
         }
 
         // GET: StudetinformationController1/Details/5
-        public ActionResult Details(int Studentid)
+        public ActionResult Details(int Studentid = 4)
         {
-            var res = objstudent.selectwithid(Studentid);
+            var res = objstudent.selectwithid (Studentid);
             return View("Details", res);
         }
 
